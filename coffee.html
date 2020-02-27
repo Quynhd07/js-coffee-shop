@@ -48,8 +48,11 @@
 
     // Set these variables to their DOM elements
 
-    let coffeeImage = document.querySelector('#coffee-image')
-    coffeeImage.setAttribute('src', 'static/coffee_beans.jpg');
+    // let coffeeImage = document.querySelector('#coffee-image');
+    // coffeeImage.setAttribute('src', 'static/coffee_beans.jpg');
+
+    let coffeeImage = $('#coffee-image');
+    coffeeImage.attr('src', 'static/coffee_beans.jpg');
 
     let revenueMessage;
 
@@ -62,14 +65,18 @@
         "hot chocolate": 2.50
     };
 
-    coffeeImage.addEventListener('click', makeCoffee);
+    // coffeeImage.addEventListener('click', makeCoffee);
+
+    coffeeImage.on('click', makeCoffee);
 
     function makeCoffee() {
-        // coffeeImage = document.querySelector('#coffee-image').setAttribute('src', 'static/coffee_mug.jpg')
-        coffeeImage.setAttribute('src', 'static/coffee_machine.jpg');
+        // coffeeImage.setAttribute('src', 'static/coffee_machine.jpg');
+        // setTimeout(function(){ coffeeImage.setAttribute('src', 'static/coffee_mug.jpg') }, 1500);
+        // setTimeout(function(){ coffeeImage.setAttribute('src', 'static/coffee_beans.jpg') }, 4000);
 
-        setTimeout(function(){ coffeeImage.setAttribute('src', 'static/coffee_mug.jpg') }, 1500);
-        setTimeout(function(){coffeeImage.setAttribute('src', 'static/coffee_beans.jpg')}, 4000);
+        coffeeImage.attr('src', 'static/coffee_machine.jpg');
+        setTimeout(function(){ coffeeImage.attr('src', 'static/coffee_mug.jpg') }, 1500);
+        setTimeout(function(){ coffeeImage.attr('src', 'static/coffee_beans.jpg') }, 4000);
     }
 
 
